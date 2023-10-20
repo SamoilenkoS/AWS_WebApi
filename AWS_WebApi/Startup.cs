@@ -44,6 +44,8 @@ namespace AWS_WebApi
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AWS_WebApi v1"));
             }
 
+            app.UseMiddleware<LoggerMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
